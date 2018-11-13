@@ -5,3 +5,7 @@
 
 // Include all theme styles for the components.
 @include angular-material-theme($theme);
+
+.purple {
+  @include angular-material-theme($purple-theme);
+}

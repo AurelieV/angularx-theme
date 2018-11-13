@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
+import { Component } from '@angular/core'
+import { Observable } from 'rxjs'
+import { map } from 'rxjs/operators'
+import { ThemeService } from '../theme.service'
 
 @Component({
   selector: 'app-main',
@@ -9,12 +10,16 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent {
+  isHandset$: Observable<boolean> = this.breakpointObserver
+    .observe(Breakpoints.Handset)
+    .pipe(map((result) => result.matches))
 
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-    .pipe(
-      map(result => result.matches)
-    );
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private theme: ThemeService
+  ) {}
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
-
+  toggleTheme() {
+    this.theme.toggleTheme()
+  }
 }

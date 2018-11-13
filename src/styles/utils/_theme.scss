@@ -1,6 +1,78 @@
 @import '~@angular/material/_theming';
+
 // Define a theme.
-$primaryPalette: mat-palette($mat-green);
-$accentPalette: mat-palette($mat-pink);
+/* For use in src/lib/core/theming/_palette.scss */
+$md-primary: (
+  50: #e5f3fc,
+  100: #bde0f7,
+  200: #91ccf2,
+  300: #65b8ed,
+  400: #44a8e9,
+  500: #2399e5,
+  600: #1f91e2,
+  700: #1a86de,
+  800: #157cda,
+  900: #0c6bd3,
+  A100: #feffff,
+  A200: #cbe2ff,
+  A400: #98c5ff,
+  A700: #7fb6ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$md-accent: (
+  50: #eceff1,
+  100: #cfd8dc,
+  200: #b0bec5,
+  300: #90a4ae,
+  400: #78919c,
+  500: #607d8b,
+  600: #587583,
+  700: #4e6a78,
+  800: #44606e,
+  900: #334d5b,
+  A100: #abe1ff,
+  A200: #78ceff,
+  A400: #45bcff,
+  A700: #2bb3ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$primaryPalette: mat-palette($md-primary);
+$accentPalette: mat-palette($md-accent);
 
 $theme: mat-light-theme($primaryPalette, $accentPalette);
+$purple-theme: mat-light-theme(
+  mat-palette($mat-deep-purple),
+  mat-palette($mat-indigo)
+);

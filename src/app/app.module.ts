@@ -24,6 +24,7 @@ import { AppComponent } from './app.component'
 import { DashboardComponent } from './dashboard/dashboard.component'
 import { ItemsListComponent } from './items-list/items-list.component'
 import { MainComponent } from './main/main.component'
+import { ThemeService } from './theme.service'
 
 @NgModule({
   declarations: [
@@ -54,7 +55,7 @@ import { MainComponent } from './main/main.component'
     MatCheckboxModule,
     MatProgressSpinnerModule,
   ],
-  providers: [],
+  providers: [ThemeService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
