@@ -1,1 +1,7 @@
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import './utils/theme';
+
+// Include non-theme styles for core.
+@include mat-core();
+
+// Include all theme styles for the components.
+@include angular-material-theme($theme);

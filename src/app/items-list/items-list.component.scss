@@ -1,10 +1,12 @@
+@import 'utils/theme';
+
 .items {
   width: 500px;
   max-width: 100%;
   border: solid 1px white;
   min-height: 60px;
   display: block;
-  background: #673ab7;
+  background: mat-color($primaryPalette);
   border-radius: 4px;
   overflow: hidden;
 }
@@ -19,16 +21,17 @@
   justify-content: space-between;
   box-sizing: border-box;
   cursor: move;
-  background: #673ab7;
+  background: mat-color($primaryPalette);
 }
 
 .cdk-drag-preview {
   box-sizing: border-box;
   border-radius: 4px;
-  box-shadow: 0 5px 5px -3px #f57f17, 0 8px 10px 1px #f57f17,
-    0 3px 14px 2px #f57f17;
-  background: #f9a825;
-  color: black;
+  box-shadow: 0 5px 5px -3px mat-color($accentPalette, 200),
+    0 8px 10px 1px mat-color($accentPalette, 200),
+    0 3px 14px 2px mat-color($accentPalette, 200);
+  background: mat-color($accentPalette);
+  color: mat-contrast($accentPalette, 200);
 }
 
 .cdk-drag-placeholder {
@@ -41,5 +44,5 @@
 
 .items.cdk-drop-list-dragging .item:not(.cdk-drag-placeholder) {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-  background: #ce93d8;
+  background: mat-color($primaryPalette, 200);
 }

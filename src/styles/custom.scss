@@ -1,3 +1,5 @@
+@import './utils/theme';
+
 .title {
-  color: #673ab7;
+  color: mat-color($primaryPalette);
 }
