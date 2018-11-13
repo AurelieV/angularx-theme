@@ -1,0 +1,34 @@
+{
+  // See http://go.microsoft.com/fwlink/?LinkId=827846 to learn about workspace recommendations.
+  // Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
+
+  // List of extensions which should be recommended for users of this workspace.
+  "recommendations": [
+    // advanced-new-file
+    "patbenatar.advanced-new-file",
+    // Auto Close Tag
+    "formulahendry.auto-close-tag",
+    // Auto Rename Tag
+    "formulahendry.auto-rename-tag",
+    // Debugger for Chrome
+    "msjsdiag.debugger-for-chrome",
+    // ECMAScript Quotes Transformer
+    "vilicvane.es-quotes",
+    // ESLint
+    "dbaeumer.vscode-eslint",
+    // JavaScript (ES6) code snippets
+    "xabikos.javascriptsnippets",
+    // markdownlint
+    "DavidAnson.vscode-markdownlint",
+    // nbsp-vscode
+    "possan.nbsp-vscode",
+    // npm
+    "eg2.vscode-npm-script",
+    // Prettier - JavaScript formatter
+    "esbenp.prettier-vscode",
+    // Template for angular language service
+    "angular.ng-template",
+    // Autocomplete path
+    "christian-kohler.path-intellisense"
+  ]
+}
