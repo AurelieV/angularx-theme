@@ -1,0 +1,67 @@
+/********** */
+/***** Angular-material to be compatible with css var ******/
+/********** */
+// ONLY DIFFERENCE WITH MATERIAL => check if $color is a color
+// if this is the case, use RGBA to no use sass mixin but css function and do not call opacity on color and force 1 when null
+@function mat-color($palette, $hue: default, $opacity: null) {
+  // If hueKey is a number between zero and one, then it actually contains an
+  // opacity value, so recall this function with the default hue and that given opacity.
+  @if type-of($hue) == number and $hue >= 0 and $hue <= 1 {
+    @return mat-color($palette, default, $hue);
+  }
+
+  $color: map-get($palette, $hue);
+
+  @if (type-of($color) == color) {
+    $opacity: if($opacity == null, opacity($color), $opacity);
+    @return rgba($color, $opacity);
+  } @else {
+    $opacity: if($opacity == null, 1, $opacity);
+    @return RGBA($color, $opacity);
+  }
+}
+
+// ONLY DIFFERENCE WITH MATERIAL => backdrop color
+@mixin mat-sidenav-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  $drawer-backdrop-color: black !default;
+  $drawer-background-color: mat-color($background, dialog) !default;
+  $drawer-container-background-color: mat-color(
+    $background,
+    background
+  ) !default;
+  $drawer-push-background-color: mat-color($background, dialog) !default;
+
+  .mat-drawer-container {
+    background-color: $drawer-container-background-color;
+    color: mat-color($foreground, text);
+  }
+
+  .mat-drawer {
+    background-color: $drawer-background-color;
+    color: mat-color($foreground, text);
+
+    &.mat-drawer-push {
+      background-color: $drawer-push-background-color;
+    }
+  }
+
+  .mat-drawer-backdrop.mat-drawer-shown {
+    background-color: $drawer-backdrop-color;
+    opacity: 0.45;
+  }
+
+  .mat-checkbox-frame {
+    border-width: 1px !important;
+  }
+
+  .mat-checkbox-inner-container {
+    height: 14px;
+    width: 14px;
+  }
+}
